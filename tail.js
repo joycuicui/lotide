@@ -11,7 +11,7 @@ const tail = function (arr) {
   for (let i = 1; i < arr.length; i++) {
     newArr.push(arr[i]);
   }
-  console.log(newArr);
+  return newArr;
 };
 
 const words = ["Yo Yo", "Lighthouse", "Labs"];
