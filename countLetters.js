@@ -9,7 +9,6 @@ const assertEqual = function (actual, expected) {
 const countLetters = function (string) {
   let result = {};
   const noSpaceString = string.replaceAll(" ", "");
-  console.log(noSpaceString);
 
   for (letter of noSpaceString) {
     if (result[letter]) {
@@ -20,3 +19,9 @@ const countLetters = function (string) {
   }
   return result;
 };
+
+const result1 = countLetters("hello world");
+assertEqual(result1["h"], 1);
+assertEqual(result1["e"], 1);
+assertEqual(result1["l"], 3);
+assertEqual(result1["o"], 2);
