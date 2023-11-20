@@ -19,12 +19,10 @@ const assertArraysEqual = function (arr1, arr2) {
 };
 
 const flatten = function (arr) {
-  const output = [];
+  let output = [];
   for (const item of arr) {
     if (Array.isArray(item)) {
-      for (const element of item) {
-        output.push(element);
-      }
+      output = output.concat(item);
     } else {
       output.push(item);
     }
