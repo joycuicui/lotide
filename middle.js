@@ -6,7 +6,7 @@ const middle = function (array) {
     const middle1 = array.length / 2 - 1;
     const middle2 = array.length / 2;
     newArray.push(array[middle1], array[middle2]);
-  } else if (array.length % 2 !== 0) {
+  } else {
     const middleIndex = (array.length - 1) / 2;
     newArray.push(array[middleIndex]);
   }
