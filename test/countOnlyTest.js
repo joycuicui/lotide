@@ -1,20 +1,19 @@
 const assert = require("chai").assert;
 const countOnly = require("../countOnly");
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe",
-];
-
 describe("#countOnly", () => {
   it("should return the correct counts for selected names", () => {
+    const firstNames = [
+      "Karl",
+      "Salima",
+      "Agouhanna",
+      "Fang",
+      "Kavith",
+      "Jason",
+      "Salima",
+      "Fang",
+      "Joe",
+    ];
     const inputObj = {
       Jason: true,
       Karima: true,
