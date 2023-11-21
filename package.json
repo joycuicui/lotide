@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@joycuicui/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "mini clone of Lodash",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/joycuicui/lotide.git"
   },
-  "author": "",
+  "author": "@joycuicui",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/joycuicui/lotide/issues"
