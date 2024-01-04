@@ -1,21 +1,34 @@
-const eqArrays = require("./eqArrays");
-
 const eqObjects = function (object1, object2) {
-  const keyCount1 = Object.keys(object1).length;
-  const keyCount2 = Object.keys(object2).length;
-  if (keyCount1 !== keyCount2) {
+  const keys1 = Object.keys(object1);
+  const keys2 = Object.keys(object2);
+
+  if (keys1.length !== keys2.length) {
     return false;
   }
-  const key1 = Object.keys(object1);
-  for (const key of key1) {
-    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-      if (!eqArrays(object1[key], object2[key])) {
+
+  // Iterate through the keys of the first object
+  for (const key of keys1) {
+    // Get the values corresponding to the current key in both objects
+    const value1 = object1[key];
+    const value2 = object2[key];
+
+    // Check if the values are arrays and recursively compare them
+    if (Array.isArray(value1) && Array.isArray(value2)) {
+      // eqObjects can compare both arrays and objects
+      if (!eqObjects(value1, value2)) {
         return false;
       }
-    } else if (object1[key] !== object2[key]) {
+    } else if (typeof value1 === "object" && typeof value2 === "object") {
+      // Check if the values are objects and recursively compare them
+      if (!eqObjects(value1, value2)) {
+        return false;
+      }
+    } else if (value1 !== value2) {
+      // If the values are neither arrays nor objects, compare them directly
       return false;
     }
   }
+
   return true;
 };
 
